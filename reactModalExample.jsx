@@ -17,14 +17,14 @@ class ReactModal extends React.Component {
     return (
       <div>  
           {this.state.isModalOpen === false ? (
-            <div className="closedPanel">
+            <div className="closedModal">
               <button 
               onClick={() => this.togglePanel()}>
                 Open modal
               </button>
             </div>
           ): 
-          <div className="openPanel">
+          <div className="openModal">
           <Modal 
           isOpen={this.state.isModalOpen}
           onRequestClose={() => this.togglePanel()}
