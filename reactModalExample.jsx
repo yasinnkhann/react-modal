@@ -1,22 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-class MoviePanel extends React.Component {
+class ReactModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isPanelOpen: false
+      isModalOpen: false
     }
   }
   
   togglePanel = () => {
-    this.setState({ isPanelOpen: !this.state.isPanelOpen })
+    this.setState({ isModalOpen: !this.state.isModalOpen })
   }
     
   render() {
     return (
-      <div id="moviePanelComponent">  
-          {!this.state.isPanelOpen ? (
+      <div>  
+          {this.state.isModalOpen === false ? (
             <div className="closedPanel">
               <button 
               onClick={() => this.togglePanel()}>
@@ -26,7 +26,7 @@ class MoviePanel extends React.Component {
           ): 
           <div className="openPanel">
           <Modal 
-          isOpen={this.state.isPanelOpen}
+          isOpen={this.state.isModalOpen}
           onRequestClose={() => this.togglePanel()}
           ariaHideApp={false}
           style={
@@ -53,4 +53,4 @@ class MoviePanel extends React.Component {
   }
 }
 
-export default MoviePanel;
+export default ReactModal;
